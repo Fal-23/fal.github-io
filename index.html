@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WorkFlow AI - Your AI-powered workplace assistant with smart tools for productivity">
+    <title>WorkFlow AI - AI-Powered Workplace Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header > p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .tools {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .tools h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+
+        .tool-btn:hover::before {
+            left: 100%;
+        }
+
+        .tool-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .tool-btn:active {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                margin-bottom: 40px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            header > p {
+                font-size: 1.1rem;
+            }
+
+            .tools {
+                padding: 30px 20px;
+            }
+
+            .tools h2 {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .tool-btn {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WorkFlow AI</h1>
+            <p>Your AI-powered workplace assistant</p>
+        </header>
+
+        <main>
+            <section class="tools">
+                <h2>AI Tools</h2>
+                <div class="tool-grid">
+                    <button class="tool-btn" onclick="launchTool('email-generator')">
+                        Smart Email Generator
+                    </button>
+                    <button class="tool-btn" onclick="launchTool('notes-summarizer')">
+                        Meeting Notes Summarizer
+                    </button>
+                    <button class="tool-btn" onclick="launchTool('task-planner')">
+                        AI Task Planner
+                    </button>
+                    <button class="tool-btn" onclick="launchTool('research-assistant')">
+                        AI Research Assistant
+                    </button>
+                    <button class="tool-btn" onclick="launchTool('chatbot')">
+                        AI Workplace Chatbot
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function launchTool(toolId) {
+            const toolNames = {
+                'email-generator': 'Smart Email Generator',
+                'notes-summarizer': 'Meeting Notes Summarizer',
+                'task-planner': 'AI Task Planner',
+                'research-assistant': 'AI Research Assistant',
+                'chatbot': 'AI Workplace Chatbot'
+            };
+
+            alert(`Launching ${toolNames[toolId]}...`);
+            console.log(`Tool launched: ${toolId}`);
+            // TODO: Replace with actual tool navigation/launch logic
+        }
+    </script>
+</body>
+</html>
